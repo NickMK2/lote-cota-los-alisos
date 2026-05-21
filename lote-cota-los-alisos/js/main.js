@@ -16,10 +16,35 @@ const contactForm = document.querySelector("#contactForm");
 const menuToggle = document.querySelector("#menuToggle");
 const navLinks = document.querySelector("#navLinks");
 const year = document.querySelector("#year");
+const backToTop = document.querySelector("#backToTop");
+const brandLink = document.querySelector(".navbar__brand");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+const scrollToTop = (event) => {
+  event.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  if (navLinks && menuToggle) {
+    navLinks.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+};
+
+if (backToTop) {
+  backToTop.addEventListener("click", scrollToTop);
+}
+
+if (brandLink) {
+  brandLink.addEventListener("click", scrollToTop);
+}
+
 
 if (whatsappFloat) {
   whatsappFloat.href = createWhatsappUrl(defaultMessage);
