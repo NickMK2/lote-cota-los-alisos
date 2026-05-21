@@ -38,10 +38,20 @@ if (menuToggle && navLinks) {
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+  navLinks.querySelectorAll("li").forEach((item) => {
+    item.addEventListener("click", () => {
+      const link = item.querySelector("a");
+
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+
       navLinks.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
+
+      if (href) {
+        window.location.href = href;
+      }
     });
   });
 }
