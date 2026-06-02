@@ -4,7 +4,26 @@ const CONTACT = {
   email: "nicolasseguraherrera96@gmail.com",
 };
 
-const defaultMessage = `Hola Nicolás, estoy interesado en el lote en Cota, Conjunto Residencial Los Alisos. Quisiera recibir más información y agendar una visita.`;
+const getPageUrl = () => {
+  const { origin, pathname, protocol } = window.location;
+  return protocol === "file:" || origin === "null" ? "https://lote-cota-los-alisos.vercel.app/" : `${origin}${pathname}`;
+};
+
+const getShareText = () => {
+  return [
+    "Lote en venta en Cota, Cundinamarca",
+    "Conjunto Residencial Los Alisos",
+    "",
+    "Área: 152,67 m²",
+    "Precio: $320.000.000 COP negociable",
+    "Venta directa",
+    "Servicios disponibles: agua, luz, gas y alcantarillado",
+    "",
+    `Fotos, ficha técnica y contacto: ${getPageUrl()}`,
+  ].join("\n");
+};
+
+const defaultMessage = `Hola Nicolás, estoy interesado en el lote en Cota, Conjunto Residencial Los Alisos. Quisiera recibir más información y agendar una visita. Vi la ficha aquí: ${getPageUrl()}`;
 
 const createWhatsappUrl = (message) => {
   return `https://wa.me/${CONTACT.phone}?text=${encodeURIComponent(message)}`;
@@ -18,6 +37,10 @@ const navLinks = document.querySelector("#navLinks");
 const year = document.querySelector("#year");
 const backToTop = document.querySelector("#backToTop");
 const brandLink = document.querySelector(".navbar__brand");
+const shareWhatsapp = document.querySelector("#shareWhatsapp");
+const shareFacebook = document.querySelector("#shareFacebook");
+const copyShareText = document.querySelector("#copyShareText");
+const shareStatus = document.querySelector("#shareStatus");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -54,6 +77,27 @@ if (heroWhatsapp) {
   heroWhatsapp.addEventListener("click", (event) => {
     event.preventDefault();
     window.open(createWhatsappUrl(defaultMessage), "_blank", "noopener,noreferrer");
+  });
+}
+
+if (shareWhatsapp) {
+  shareWhatsapp.href = createWhatsappUrl(getShareText());
+}
+
+if (shareFacebook) {
+  shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getPageUrl())}`;
+}
+
+if (copyShareText) {
+  copyShareText.addEventListener("click", async () => {
+    const text = getShareText();
+
+    try {
+      await navigator.clipboard.writeText(text);
+      if (shareStatus) shareStatus.textContent = "Texto copiado. Ya puedes pegarlo en grupos, chats o portales.";
+    } catch (error) {
+      if (shareStatus) shareStatus.textContent = text;
+    }
   });
 }
 

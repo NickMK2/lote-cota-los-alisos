@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, initial-scale=1.0" />
+  <title>Historia vertical - Lote en Cota</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      margin: 0;
+      overflow: hidden;
+      font-family: Inter, Arial, sans-serif;
+      color: #ffffff;
+      background: #183b2d;
+    }
+
+    .story {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      display: grid;
+      align-content: space-between;
+      padding: 110px 78px 120px;
+      background:
+        linear-gradient(180deg, rgba(24, 59, 45, 0.74) 0%, rgba(24, 59, 45, 0.18) 38%, rgba(24, 59, 45, 0.94) 100%),
+        url("../assets/img/lote-frente.jpg") center/cover no-repeat;
+    }
+
+    .tag {
+      width: fit-content;
+      min-height: 68px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 30px;
+      border-radius: 999px;
+      color: #183b2d;
+      background: #efe3c6;
+      font-size: 31px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 110px;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .details {
+      display: grid;
+      gap: 18px;
+      margin-top: 52px;
+      font-size: 43px;
+      font-weight: 900;
+    }
+
+    .details span {
+      display: block;
+    }
+
+    .cta {
+      margin-top: 62px;
+      padding: 34px 38px;
+      border-radius: 28px;
+      color: #183b2d;
+      background: #ffffff;
+      font-size: 39px;
+      font-weight: 900;
+      line-height: 1.18;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="story">
+    <div class="tag">Cota, Cundinamarca</div>
+    <section>
+      <h1>Lote en venta</h1>
+      <div class="details">
+        <span>Conjunto Los Alisos</span>
+        <span>152,67 m²</span>
+        <span>$320.000.000 negociable</span>
+      </div>
+      <div class="cta">Venta directa. Escribe al WhatsApp +57 302 832 7122.</div>
+    </section>
+  </main>
+</body>
+
+</html>

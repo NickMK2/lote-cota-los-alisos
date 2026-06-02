@@ -7,10 +7,23 @@ Proyecto estático en HTML, CSS y JavaScript para publicar en Vercel.
 ```txt
 lote-cota-los-alisos/
 ├── index.html
+├── robots.txt
+├── sitemap.xml
 ├── css/
 │   └── styles.css
 ├── js/
 │   └── main.js
+├── difusion/
+│   ├── guia-publicacion-rapida.md
+│   ├── textos-para-compartir.md
+│   ├── canales-publicacion.csv
+│   ├── post-cuadrado.html
+│   ├── historia-vertical.html
+│   ├── portada-horizontal.html
+│   └── exportados/
+│       ├── lote-cota-post.png
+│       ├── lote-cota-historia.png
+│       └── lote-cota-portada.png
 └── assets/
     └── img/
         ├── hero-lote.jpg
@@ -32,6 +45,17 @@ La más importante es:
 - `hero-lote.jpg`: imagen principal de la portada.
 
 Recomendación: usa imágenes horizontales, livianas, en formato `.jpg` o `.webp`.
+
+## Kit de difusión
+
+La carpeta `difusion/` incluye:
+
+- Textos listos para WhatsApp, Facebook, Instagram y portales inmobiliarios.
+- Campos de publicación para copiar en Ciencuadras, Metrocuadrado, Fincaraíz, Mercado Libre y Facebook Marketplace.
+- Una rutina de difusión de 7 días.
+- Piezas visuales PNG listas para subir a redes en `difusion/exportados/`.
+
+Si cambias precio, teléfono o URL pública, actualiza también los textos de `difusion/`.
 
 ## Contacto configurado
 

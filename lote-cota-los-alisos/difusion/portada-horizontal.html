@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, initial-scale=1.0" />
+  <title>Portada horizontal - Lote en Cota</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+      font-family: Inter, Arial, sans-serif;
+      color: #ffffff;
+      background: #183b2d;
+    }
+
+    .cover {
+      width: 1200px;
+      height: 630px;
+      display: grid;
+      grid-template-columns: 1fr 0.82fr;
+      background: #183b2d;
+    }
+
+    .copy {
+      display: grid;
+      align-content: center;
+      padding: 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #efe3c6;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 66px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .facts {
+      display: grid;
+      gap: 12px;
+      margin-top: 32px;
+      font-size: 27px;
+      font-weight: 800;
+      color: #efe3c6;
+    }
+
+    .photo {
+      background:
+        linear-gradient(90deg, #183b2d 0%, rgba(24, 59, 45, 0) 34%),
+        url("../assets/img/entrada-conjunto.jpg") center/cover no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cover">
+    <section class="copy">
+      <p class="eyebrow">Lote en venta en Cota</p>
+      <h1>Conjunto Residencial Los Alisos</h1>
+      <div class="facts">
+        <span>152,67 m² | Venta directa</span>
+        <span>$320.000.000 COP negociable</span>
+        <span>WhatsApp: +57 302 832 7122</span>
+      </div>
+    </section>
+    <div class="photo" aria-label="Entrada del conjunto"></div>
+  </main>
+</body>
+
+</html>
